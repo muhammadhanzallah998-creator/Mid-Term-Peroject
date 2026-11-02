@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap | Exchange Your Skills</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="#" class="logo">Skill<span>Swap.</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#explore">Explore Skills</a>
+      <a href="#offer">Offer Skill</a>
+      <a href="#requests">Requests <span id="requestCount">0</span></a>
+    </div>
+    <button class="nav-btn" onclick="openOffer()">+ Add Skill</button>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tagline">LEARN • SHARE • GROW</span>
+    <h1>Your Skills Have<br> <span>More Value</span><br>When Shared.</h1>
+    <p>
+      Exchange your knowledge with people around the world.
+      Teach what you know and learn something new without spending money.
+    </p>
+    <div class="hero-buttons">
+      <a href="#explore" class="btn primary">Explore Skills</a>
+      <button class="btn secondary" onclick="openOffer()">Share Your Skill</button>
+    </div>
+    <div class="stats">
+      <div><h2 id="skillStat">8+</h2><p>Skills Listed</p></div>
+      <div><h2>100%</h2><p>Free Learning</p></div>
+      <div><h2>24/7</h2><p>Community</p></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="circle circle-one"></div>
+    <div class="circle circle-two"></div>
+    <div class="hero-card">
+      <div class="hero-icon">💡</div>
+      <h3>Knowledge is better when shared.</h3>
+      <p>Give a skill. Get a skill.</p>
+      <div class="avatars">👩🏻 👨🏽 👩🏾 👨🏻</div>
+      <small>People learning together</small>
+    </div>
+    <div class="floating-card">🎨 Creat.ive Skills</div>
+    <div class="floating-card second">💻 Tech Skills</div>
+  </div>
+</section>
+
+<section class="explore section" id="explore">
+  <div class="section-heading">
+    <div>
+      <span class="tagline">DISCOVER SOMETHING NEW</span>
+      <h2>Explore Skills</h2>
+      <p>Find someone who can teach you something amazing.</p>
+    </div>
+    <input type="search" id="searchInput"
+      placeholder="Search skills or people...">
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter active" data-category="All">All Skills</button>
+    <button class="filter" data-category="Technology">Technology</button>
+    <button class="filter" data-category="Design">Design</button>
+    <button class="filter" data-category="Language">Language</button>
+    <button class="filter" data-category="Business">Business</button>
+    <button class="filter" data-category="Other">Other</button>
+  </div>
+
+  <div class="skill-grid" id="skillGrid"></div>
+  <p class="empty-state" id="emptyState" hidden>No skills found. Try another search.</p>
+</section>
+
+<section class="how section">
+  <div class="center-heading">
+    <span class="tagline">SIMPLE PROCESS</span>
+    <h2>How SkillSwap Works</h2>
+    <p>Three simple steps to start learning.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <h3>1. Find a Skill</h3>
+      <p>Explore skills offered by people in our community.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">🤝</div>
+      <h3>2. Make an Exchange</h3>
+      <p>Offer one of your skills in return for learning theirs.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">🚀</div>
+      <h3>3. Learn & Grow</h3>
+      <p>Connect, share knowledge and improve together.</p>
+    </div>
+  </div>
+</section>
+
+<section class="offer-section section" id="offer">
+  <div>
+    <span class="tagline">YOUR KNOWLEDGE MATTERS</span>
+    <h2>Have a Skill?<br><span>Share It With Others.</span></h2>
+    <p>Everyone knows something valuable. Add your skill and find someone ready to exchange knowledge.</p>
+    <button class="btn primary" onclick="openOffer()">Offer Your Skill +</button>
+  </div>
+  <div class="offer-art">🌱<span>Grow together</span></div>
+</section>
+
+<section class="requests-section section" id="requests">
+  <div class="center-heading">
+    <span class="tagline">YOUR ACTIVITY</span>
+    <h2>Exchange Requests</h2>
+    <p>Requests you have sent will appear here.</p>
+  </div>
+  <div id="requestList" class="request-list"></div>
+</section>
+
+<footer>
+  <a href="#" class="logo">Skill<span>Swap.</span></a>
+  <p>Learn something. Teach something. Make a difference.</p>
+  <small>© 2026 SkillSwap. All rights reserved.</small>
+</footer>
+
+<!-- Add Skill Modal -->
+<div class="modal" id="offerModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeOffer()">×</button>
+    <span class="tagline">JOIN THE COMMUNITY</span>
+    <h2>Offer Your Skill</h2>
+    <p>Tell others what you can teach.</p>
+
+    <form id="skillForm">
+      <label>Your Name</label>
+      <input type="text" id="userName" placeholder="Enter your name" required>
+
+      <label>Skill Title</label>
+      <input type="text" id="skillName" placeholder="e.g. Web Development" required>
+
+      <label>Category</label>
+      <select id="skillCategory" required>
+        <option value="">Select category</option>
+        <option>Technology</option>
+        <option>Design</option>
+        <option>Language</option>
+        <option>Business</option>
+        <option>Other</option>
+      </select>
+
+      <label>What do you want to learn in exchange?</label>
+      <input type="text" id="wantSkill" placeholder="e.g. Graphic Design" required>
+
+      <label>Short Description</label>
+      <textarea id="skillDescription" placeholder="Describe your skill..." required></textarea>
+
+      <button class="btn primary full-btn" type="submit">Publish My Skill</button>
+    </form>
+  </div>
+</div>
+
+<!-- Profile Modal -->
+<div class="modal" id="profileModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeProfile()">×</button>
+    <div id="profileContent"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
