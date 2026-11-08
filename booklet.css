@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f4ff;
+  color: #292840;
+  line-height: 1.8;
+}
+
+.booklet-header {
+  background: linear-gradient(135deg, #6657e8, #5142cf);
+  color: white;
+  text-align: center;
+  padding: 75px 20px;
+}
+
+.booklet-header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.booklet-header p {
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.book-icon {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.booklet-section {
+  background: white;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(40, 30, 100, 0.07);
+}
+
+.booklet-section h2 {
+  color: #6657e8;
+  margin-bottom: 18px;
+  font-size: 25px;
+  border-bottom: 2px solid #eeeaff;
+  padding-bottom: 10px;
+}
+
+.booklet-section h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: #34324f;
+}
+
+.booklet-section p {
+  color: #66657a;
+  margin-bottom: 12px;
+}
+
+.booklet-section ul,
+.booklet-section ol {
+  padding-left: 25px;
+  color: #66657a;
+}
+
+.booklet-section li {
+  margin-bottom: 8px;
+}
+
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: #6657e8;
+  padding: 7px 0;
+  border-bottom: 1px solid #f0eef8;
+}
+
+.toc a:hover {
+  color: #3929b6;
+  padding-left: 7px;
+  transition: 0.3s;
+  transform: translateX(3px);
+  transform: translateY(-3px);
+}
+
+.back-btn {
+  display: inline-block;
+  background: white;
+  color: #6657e8;
+  border: 1px solid #6657e8;
+  padding: 11px 20px;
+  border-radius: 9px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #6657e8;
+  color: white;
+}
+
+.print-btn {
+  display: inline-block;
+  background: #6657e8;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.print-btn:hover {
+  background: #5142cf;
+}
+
+footer {
+  background: #17172f;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  .booklet-header h1 {
+    font-size: 35px;
+  }
+
+  .booklet-section {
+    padding: 22px;
+  }
+
+  .booklet-section h2 {
+    font-size: 21px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .booklet-header {
+    background: #6657e8 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .booklet-section {
+    box-shadow: none;
+    border: 1px solid #eee;
+    break-inside: avoid;
+  }
+
+  .back-btn,
+  .print-btn {
+    display: none;
+  }
+
+  footer {
+    background: white;
+    color: black;
+  }
+}
