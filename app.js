@@ -1,4 +1,3 @@
-
 const defaultSkills = [
   {
     id: 1,
@@ -7,7 +6,8 @@ const defaultSkills = [
     owner: "Ali Ahmed",
     avatar: "👨🏻‍💻",
     exchange: "Graphic Design",
-    description: "I can teach HTML, CSS, JavaScript and responsive website development."
+    description:
+      "I can teach HTML, CSS, JavaScript and responsive website development.",
   },
   {
     id: 2,
@@ -16,7 +16,8 @@ const defaultSkills = [
     owner: "Sara Khan",
     avatar: "👩🏻‍🎨",
     exchange: "Web Development",
-    description: "Learn Canva, Photoshop basics, branding and social media designs."
+    description:
+      "Learn Canva, Photoshop basics, branding and social media designs.",
   },
   {
     id: 3,
@@ -25,7 +26,7 @@ const defaultSkills = [
     owner: "Ahmed Raza",
     avatar: "👨🏽",
     exchange: "Video Editing",
-    description: "Practice conversational English and improve your confidence."
+    description: "Practice conversational English and improve your confidence.",
   },
   {
     id: 4,
@@ -34,7 +35,8 @@ const defaultSkills = [
     owner: "Ayesha Noor",
     avatar: "👩🏻",
     exchange: "Content Writing",
-    description: "Learn social media marketing, SEO and digital marketing strategies."
+    description:
+      "Learn social media marketing, SEO and digital marketing strategies.",
   },
   {
     id: 5,
@@ -43,7 +45,8 @@ const defaultSkills = [
     owner: "Usman Ali",
     avatar: "🎬",
     exchange: "English Speaking",
-    description: "Learn editing basics, transitions and short-form video creation."
+    description:
+      "Learn editing basics, transitions and short-form video creation.",
   },
   {
     id: 6,
@@ -52,7 +55,8 @@ const defaultSkills = [
     owner: "Hassan Malik",
     avatar: "👨🏾‍💻",
     exchange: "Business Skills",
-    description: "Start programming with Python and understand coding fundamentals."
+    description:
+      "Start programming with Python and understand coding fundamentals.",
   },
   {
     id: 7,
@@ -61,7 +65,8 @@ const defaultSkills = [
     owner: "Mina Khan",
     avatar: "✍️",
     exchange: "Digital Marketing",
-    description: "Learn blog writing, creative writing and writing for the web."
+    description:
+      "Learn blog writing, creative writing and writing for the web.",
   },
   {
     id: 8,
@@ -70,8 +75,8 @@ const defaultSkills = [
     owner: "Zain Abbas",
     avatar: "📸",
     exchange: "Graphic Design",
-    description: "Learn photography composition, lighting and photo editing."
-  }
+    description: "Learn photography composition, lighting and photo editing.",
+  },
 ];
 
 function loadData(key, fallback) {
@@ -102,21 +107,23 @@ function getIcon(category) {
     Design: "🎨",
     Language: "🌍",
     Business: "📈",
-    Other: "✨"
+    Other: "✨",
   };
   return icons[category] || "💡";
 }
 
 function renderSkills() {
-  const filtered = skills.filter(skill => {
+  const filtered = skills.filter((skill) => {
     const matchesCategory =
-      activeCategory === "All" ||
-      skill.category === activeCategory;
+      activeCategory === "All" || skill.category === activeCategory;
 
     const text = (
-      skill.name + " " +
-      skill.owner + " " +
-      skill.description + " " +
+      skill.name +
+      " " +
+      skill.owner +
+      " " +
+      skill.description +
+      " " +
       skill.exchange
     ).toLowerCase();
 
@@ -127,7 +134,7 @@ function renderSkills() {
 
   document.getElementById("emptyState").hidden = filtered.length > 0;
 
-  filtered.forEach(skill => {
+  filtered.forEach((skill) => {
     const card = document.createElement("article");
     card.className = "skill-card";
 
@@ -198,7 +205,7 @@ function renderSkills() {
 }
 
 function showProfile(id) {
-  const skill = skills.find(item => item.id === id);
+  const skill = skills.find((item) => item.id === id);
   if (!skill) return;
 
   const content = document.getElementById("profileContent");
@@ -236,7 +243,13 @@ function showProfile(id) {
   };
 
   content.append(
-    avatar, tag, title, skillBox, exchangeBox, description, button
+    avatar,
+    tag,
+    title,
+    skillBox,
+    exchangeBox,
+    description,
+    button,
   );
 
   document.getElementById("profileModal").classList.add("show");
@@ -266,12 +279,10 @@ function showToast(message) {
 }
 
 function sendRequest(id) {
-  const skill = skills.find(item => item.id === id);
+  const skill = skills.find((item) => item.id === id);
   if (!skill) return;
 
-  const alreadySent = requests.some(
-    request => request.skillId === id
-  );
+  const alreadySent = requests.some((request) => request.skillId === id);
 
   if (alreadySent) {
     showToast("You have already requested this skill!");
@@ -285,7 +296,7 @@ function sendRequest(id) {
     owner: skill.owner,
     exchange: skill.exchange,
     status: "Pending",
-    date: new Date().toLocaleDateString()
+    date: new Date().toLocaleDateString(),
   });
 
   saveData();
@@ -297,18 +308,18 @@ function renderRequests() {
   const list = document.getElementById("requestList");
   list.innerHTML = "";
 
-  document.getElementById("requestCount").textContent =
-    requests.length;
+  document.getElementById("requestCount").textContent = requests.length;
 
   if (!requests.length) {
     const empty = document.createElement("p");
     empty.className = "empty-state";
-    empty.textContent = "No exchange requests yet. Explore skills to get started!";
+    empty.textContent =
+      "No exchange requests yet. Explore skills to get started!";
     list.appendChild(empty);
     return;
   }
 
-  requests.forEach(request => {
+  requests.forEach((request) => {
     const item = document.createElement("div");
     item.className = "request-item";
 
@@ -318,8 +329,7 @@ function renderRequests() {
 
     const detail = document.createElement("p");
     detail.textContent =
-      "Your exchange offer: " + request.exchange +
-      " · " + request.date;
+      "Your exchange offer: " + request.exchange + " · " + request.date;
 
     info.append(title, detail);
 
@@ -332,51 +342,55 @@ function renderRequests() {
   });
 }
 
-document.getElementById("skillForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+document
+  .getElementById("skillForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const name = document.getElementById("userName").value.trim();
-  const skillName = document.getElementById("skillName").value.trim();
-  const category = document.getElementById("skillCategory").value;
-  const exchange = document.getElementById("wantSkill").value.trim();
-  const description = document.getElementById("skillDescription").value.trim();
+    const name = document.getElementById("userName").value.trim();
+    const skillName = document.getElementById("skillName").value.trim();
+    const category = document.getElementById("skillCategory").value;
+    const exchange = document.getElementById("wantSkill").value.trim();
+    const description = document
+      .getElementById("skillDescription")
+      .value.trim();
 
-  if (!name || !skillName || !category || !exchange || !description) {
-    showToast("Please fill in all fields.");
-    return;
-  }
+    if (!name || !skillName || !category || !exchange || !description) {
+      showToast("Please fill in all fields.");
+      return;
+    }
 
-  skills.unshift({
-    id: Date.now(),
-    name: skillName,
-    category,
-    owner: name,
-    avatar: "🧑🏻",
-    exchange,
-    description
+    skills.unshift({
+      id: Date.now(),
+      name: skillName,
+      category,
+      owner: name,
+      avatar: "🧑🏻",
+      exchange,
+      description,
+    });
+
+    saveData();
+    renderSkills();
+    closeOffer();
+    this.reset();
+
+    showToast("Your skill has been published!");
+    document.getElementById("explore").scrollIntoView({ behavior: "smooth" });
   });
 
-  saveData();
-  renderSkills();
-  closeOffer();
-  this.reset();
-
-  showToast("Your skill has been published!");
-  document.getElementById("explore").scrollIntoView({ behavior: "smooth" });
-});
-
-searchInput.addEventListener("input", event => {
+searchInput.addEventListener("input", (event) => {
   searchText = event.target.value;
   renderSkills();
 });
 
-document.getElementById("filters").addEventListener("click", event => {
+document.getElementById("filters").addEventListener("click", (event) => {
   const button = event.target.closest("[data-category]");
   if (!button) return;
 
   activeCategory = button.dataset.category;
 
-  document.querySelectorAll(".filter").forEach(filter => {
+  document.querySelectorAll(".filter").forEach((filter) => {
     filter.classList.toggle("active", filter === button);
   });
 
@@ -384,8 +398,8 @@ document.getElementById("filters").addEventListener("click", event => {
 });
 
 // Close modals when clicking outside
-document.querySelectorAll(".modal").forEach(modal => {
-  modal.addEventListener("click", event => {
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.classList.remove("show");
     }

@@ -145,28 +145,6 @@ a {
   flex-wrap: wrap;
 }
 
-.booklet-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 13px 20px;
-    margin-top: 15px;
-    border: 1px solid #6657e8;
-    border-radius: 10px;
-    color: #6657e8;
-    background: white;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    transition: .3s ease;
-}
-
-.booklet-btn:hover {
-    background: #6657e8;
-    color: white;
-    transform: translateY(-3px);
-}
-
 .secondary {
   background: white;
   color: var(--dark);
@@ -464,7 +442,27 @@ select:focus {
   border: 1px solid var(--primary);
   color: white;
 }
+.booklet-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 20px;
+    margin-top: 15px;
+    border: 1px solid #6657e8;
+    border-radius: 10px;
+    color: #6657e8;
+    background: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s ease;
+}}
 
+.booklet-btn:hover {
+    background: #6657e8;
+    color: white;
+    transform: translateY(-3px);
+}
 .empty-state {
   text-align: center;
   color: var(--text);
