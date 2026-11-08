@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
 
 :root {
   --primary: #635bdb;
@@ -17,12 +16,15 @@
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   background: white;
   color: var(--dark);
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -49,7 +51,7 @@ a {
 }
 
 .logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 27px;
   font-weight: 700;
 }
@@ -77,21 +79,24 @@ a {
   border-radius: 20px;
 }
 
-.nav-btn, .btn {
+.nav-btn,
+.btn {
   border: none;
   border-radius: 8px;
   padding: 13px 22px;
   font-weight: 700;
   font-size: 13px;
-  transition: .25s;
+  transition: 0.25s;
 }
 
-.nav-btn, .primary {
+.nav-btn,
+.primary {
   background: var(--primary);
   color: white;
 }
 
-.nav-btn:hover, .primary:hover {
+.nav-btn:hover,
+.primary:hover {
   background: #4e46c3;
   transform: translateY(-2px);
 }
@@ -101,7 +106,7 @@ a {
   padding: 75px 10%;
   background: linear-gradient(120deg, #f6f5ff, #eeedff);
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 50px;
 }
@@ -114,14 +119,15 @@ a {
 }
 
 .hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(42px, 5.5vw, 66px);
   line-height: 1.12;
   margin: 20px 0;
   letter-spacing: -2px;
 }
 
-.hero h1 span, .offer-section h2 span {
+.hero h1 span,
+.offer-section h2 span {
   color: var(--primary);
 }
 
@@ -137,6 +143,28 @@ a {
   gap: 13px;
   margin-top: 28px;
   flex-wrap: wrap;
+}
+
+.booklet-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 20px;
+    margin-top: 15px;
+    border: 1px solid #6657e8;
+    border-radius: 10px;
+    color: #6657e8;
+    background: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.booklet-btn:hover {
+    background: #6657e8;
+    color: white;
+    transform: translateY(-3px);
 }
 
 .secondary {
@@ -158,7 +186,7 @@ a {
 
 .stats h2 {
   font-size: 25px;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 .stats p {
@@ -208,7 +236,7 @@ a {
 
 .hero-card h3 {
   font-size: 19px;
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
 }
 
 .hero-card p {
@@ -259,13 +287,15 @@ a {
   flex-wrap: wrap;
 }
 
-.section-heading h2, .center-heading h2 {
-  font-family: 'Space Grotesk';
+.section-heading h2,
+.center-heading h2 {
+  font-family: "Space Grotesk";
   font-size: 36px;
   margin: 10px 0;
 }
 
-.section-heading p, .center-heading p {
+.section-heading p,
+.center-heading p {
   color: var(--text);
   font-size: 13px;
 }
@@ -278,7 +308,10 @@ a {
   outline: none;
 }
 
-#searchInput:focus, input:focus, textarea:focus, select:focus {
+#searchInput:focus,
+input:focus,
+textarea:focus,
+select:focus {
   border-color: var(--primary);
 }
 
@@ -298,7 +331,8 @@ a {
   font-weight: 600;
 }
 
-.filter.active, .filter:hover {
+.filter.active,
+.filter:hover {
   background: var(--primary);
   color: white;
   border-color: var(--primary);
@@ -314,7 +348,7 @@ a {
   padding: 25px;
   border: 1px solid var(--border);
   border-radius: 14px;
-  transition: .25s;
+  transition: 0.25s;
   background: white;
 }
 
@@ -350,7 +384,7 @@ a {
 }
 
 .skill-card h3 {
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   margin: 20px 0 8px;
   font-size: 18px;
 }
@@ -361,7 +395,7 @@ a {
   line-height: 1.7;
   min-height: 42px;
 }
-
+ 
 .person {
   display: flex;
   align-items: center;
@@ -369,7 +403,7 @@ a {
   border-top: 1px solid var(--border);
   margin-top: 20px;
   padding-top: 16px;
-}
+  }
 
 .avatar {
   width: 38px;
@@ -465,7 +499,7 @@ a {
 }
 
 .step h3 {
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   font-size: 17px;
   margin-bottom: 12px;
 }
@@ -484,7 +518,7 @@ a {
 }
 
 .offer-section h2 {
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   font-size: 40px;
   line-height: 1.25;
   margin: 15px 0;
@@ -577,7 +611,6 @@ footer p {
 footer small {
   color: #88899d;
   font-size: 10px;
-
 }
 .modal {
   display: none;
@@ -605,7 +638,7 @@ footer small {
 }
 
 .modal-box h2 {
-  font-family: 'Space Grotesk';
+  font-family: "Space Grotesk";
   font-size: 27px;
   margin: 12px 0;
 }
@@ -633,7 +666,9 @@ footer small {
   margin: 15px 0 7px;
 }
 
-.modal-box input, .modal-box select, .modal-box textarea {
+.modal-box input,
+.modal-box select,
+.modal-box textarea {
   width: 100%;
   border: 1px solid var(--border);
   border-radius: 7px;
@@ -684,22 +719,32 @@ footer small {
   border-radius: 9px;
   font-size: 12px;
   z-index: 50;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .toast.show {
   transform: translate(-50%, 0);
 }
 
-@media(max-width:900px) {
-  .navbar { padding: 0 5%; }
-  .nav-links { gap: 14px; }
-  .hero { padding: 60px 6%; }
-  .section { padding: 70px 6%; }
-  .skill-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 5%;
+  }
+  .nav-links {
+    gap: 14px;
+  }
+  .hero {
+    padding: 60px 6%;
+  }
+  .section {
+    padding: 70px 6%;
+  }
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media(max-width:650px) {
+@media (max-width: 650px) {
   .navbar {
     height: auto;
     padding: 18px 5%;
@@ -714,19 +759,54 @@ footer small {
     padding: 5px 0;
   }
 
-  .nav-links a { white-space: nowrap; }
-  .nav-btn { padding: 10px 13px; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 330px; }
-  .circle-one { width: 280px; height: 280px; }
-  .circle-two { width: 210px; height: 210px; }
-  .stats { gap: 25px; }
-  .stats h2 { font-size: 20px; }
-  .section-heading { align-items: stretch; }
-  #searchInput { width: 100%; }
-  .skill-grid, .steps, .offer-section { grid-template-columns: 1fr; }
-  .section-heading h2, .center-heading h2 { font-size: 29px; }
-  .offer-section h2 { font-size: 32px; }
-  .request-item { align-items: flex-start; }
-  .modal-box { padding: 28px 22px; }
+  .nav-links a {
+    white-space: nowrap;
+  }
+  .nav-btn {
+    padding: 10px 13px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    min-height: 330px;
+  }
+  .circle-one {
+    width: 280px;
+    height: 280px;
+  }
+  .circle-two {
+    width: 210px;
+    height: 210px;
+  }
+  .stats {
+    gap: 25px;
+  }
+  .stats h2 {
+    font-size: 20px;
+  }
+  .section-heading {
+    align-items: stretch;
+  }
+  #searchInput {
+    width: 100%;
+  }
+  .skill-grid,
+  .steps,
+  .offer-section {
+    grid-template-columns: 1fr;
+  }
+  .section-heading h2,
+  .center-heading h2 {
+    font-size: 29px;
+  }
+  .offer-section h2 {
+    font-size: 32px;
+  }
+  .request-item {
+    align-items: flex-start;
+  }
+  .modal-box {
+    padding: 28px 22px;
+  }
 }
