@@ -409,3 +409,17 @@ document.querySelectorAll(".modal").forEach((modal) => {
 // Initial page render
 renderSkills();
 renderRequests();
+
+
+// 
+
+let icon = document.querySelector("#icon");
+
+icon.onclick = ()=>{
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
+    icon.src = "./Img/sun.png";
+  }else{
+    icon.src = "./Img/moon.png";
+  }
+}
